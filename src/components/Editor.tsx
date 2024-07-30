@@ -75,13 +75,25 @@ export function Editor() {
                     </FloatingMenu>
                 )}
                 {editor && (
-                    <BubbleMenu className='bg-zinc-700 shadow-xl border border-zinc-600 shadow-black/20 rounded-lg overflow-hidden flex divide-x divide--600' editor={editor}>
-                        <button className='p-2 text-zinc-200 text-sm flex items-center gap-1.5 font-medium leading-none  hover:text-zinc-50 hover:bg-zinc-600'><RxChevronDown className='w-4 h-4' />Text</button>
-                        <button className='p-2 text-zinc-200 text-sm flex items-center gap-1.5 font-medium leading-none  hover:text-zinc-50 hover:bg-zinc-600'><RxChatBubble className='w-4 h-4' />Comment</button>
-                        <button className='p-2 text-zinc-200 text-sm flex items-center gap-1.5 font-medium leading-none  hover:text-zinc-50 hover:bg-zinc-600 data-[active=true]: text-violet-400'><RxFontBold onClick={() => editor.chain().focus().toggleBold().run()} data-active={editor.isActive("bold")} className='w-4 h-4' /></button>
-                        <button className='p-2 text-zinc-200 text-sm flex items-center gap-1.5 font-medium leading-none  hover:text-zinc-50 hover:bg-zinc-600'><RxFontItalic onClick={() => editor.chain().focus().toggleItalic().run()} data-active={editor.isActive("italic")} className='w-4 h-4' className='w-4 h-4' /></button>
-                        <button className='p-2 text-zinc-200 text-sm flex items-center gap-1.5 font-medium leading-none  hover:text-zinc-50 hover:bg-zinc-600'><RxStrikethrough onClick={() => editor.chain().focus().toggleStrike().run()} data-active={editor.isActive("strike")} className='w-4 h-4' /></button>
-                        <button className='p-2 text-zinc-200 text-sm flex items-center gap-1.5 font-medium leading-none  hover:text-zinc-50 hover:bg-zinc-600'><RxCode onClick={() => editor.chain().focus().toggleCode().run()} data-active={editor.isActive("code")} className='w-4 h-4' /></button>
+                    <BubbleMenu className='bg-zinc-700 shadow-xl border border-zinc-600 shadow-black/20 rounded-lg overflow-hidden flex divide-x divide-zinc-600' editor={editor}>
+                        <button className='p-2 text-zinc-200 text-sm flex items-center gap-1.5 font-medium leading-none hover:text-zinc-50 hover:bg-zinc-600'>
+                            <RxChevronDown className='w-4 h-4' />Text
+                        </button>
+                        <button className='p-2 text-zinc-200 text-sm flex items-center gap-1.5 font-medium leading-none hover:text-zinc-50 hover:bg-zinc-600'>
+                            <RxChatBubble className='w-4 h-4' />Comment
+                        </button>
+                        <button className='p-2 text-zinc-200 text-sm flex items-center gap-1.5 font-medium leading-none hover:text-zinc-50 hover:bg-zinc-600' onClick={() => editor.chain().focus().toggleBold().run()} data-active={editor.isActive("bold")}>
+                            <RxFontBold className='w-4 h-4' />
+                        </button>
+                        <button className='p-2 text-zinc-200 text-sm flex items-center gap-1.5 font-medium leading-none hover:text-zinc-50 hover:bg-zinc-600' onClick={() => editor.chain().focus().toggleItalic().run()} data-active={editor.isActive("italic")}>
+                            <RxFontItalic className='w-4 h-4' />
+                        </button>
+                        <button className='p-2 text-zinc-200 text-sm flex items-center gap-1.5 font-medium leading-none hover:text-zinc-50 hover:bg-zinc-600' onClick={() => editor.chain().focus().toggleStrike().run()} data-active={editor.isActive("strike")}>
+                            <RxStrikethrough className='w-4 h-4' />
+                        </button>
+                        <button className='p-2 text-zinc-200 text-sm flex items-center gap-1.5 font-medium leading-none hover:text-zinc-50 hover:bg-zinc-600' onClick={() => editor.chain().focus().toggleCode().run()} data-active={editor.isActive("code")}>
+                            <RxCode className='w-4 h-4' />
+                        </button>
                     </BubbleMenu>
                 )}
             </div>
